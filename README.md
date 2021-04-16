@@ -82,7 +82,7 @@ VaccineFinder is an app to help users find available appointments to get a COVID
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="https://imgur.com/a/nmhsYxN" width=600>
+<img src="http://g.recordit.co/85cciCl1O0.gif" width=600>
 		 	 	 		
 			 		
 
