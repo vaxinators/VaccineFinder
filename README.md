@@ -1,3 +1,4 @@
+[Wireframes ios project.pdf](https://github.com/vaxinators/VaccineFinder/files/6326675/Wireframes.ios.project.pdf)
 # VaccineFinder
 Original App Design Project - README Template
 ===
@@ -81,7 +82,7 @@ VaccineFinder is an app to help users find available appointments to get a COVID
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://imgur.com/a/nmhsYxN" width=600>
 		 	 	 		
 			 		
 
