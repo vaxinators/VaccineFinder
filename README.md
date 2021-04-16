@@ -31,13 +31,10 @@ VaccineFinder is an app to help users find available appointments to get a COVID
 * User can input location manually or get location automatically from IOS
 * User can scroll through locations with available appointments
 * User can click on location and get a detail screen with appointments
-* User can set up notifications to remind them of their appointment
 
 **Optional Nice-to-have Stories**
 * A map to display the vaccination locations
-
-* [fill in your required user stories here]
-* ...
+* User can set up notifications to remind them of their appointment
 
 ### 2. Screen Archetypes
 
