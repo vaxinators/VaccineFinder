@@ -48,33 +48,17 @@ VaccineFinder is an app to help users find available appointments to get a COVID
 
 ### 3. Navigation
 
-**Tab Navigation** (Tab to Screen)
-
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
-
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
-
-
-
-
-
-
-
-
-
-
-
-
-
+* Main Screen
+   * Input zipcode and hit go button to go to second screen
+   
+* Second Screen
+   * Scroll through a tableview of locations
+   * Click on specific location which will go to third screen
+ 
+ * Third Screen
+   * Detailed View of Specific location
 
 
 ## Wireframes
