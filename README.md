@@ -18,7 +18,7 @@ VaccineFinder is an app to help users find available appointments to get a COVID
 ### App Evaluation
 [Evaluation of your app across the following attributes]
 - **Category:** Health
-- **Mobile:** This app could be viable both on the web and on mobile. However, a mobile experience would provide users with additional features such as being able to set notifications to remind you of your appointment, or when a location has more appointments available. 
+- **Mobile:** This app could be viable both on the web and on mobile. However, a mobile experience would provide users with additional features such as being able to set notifications to remind you of your appointment, or when a location has more appointments available.
 - **Story:** Allows users to conveniently find an appointment and remind them as needed. It could also remind them to check their local government website and ensure all the proper forms are filled out prior to their arrival.
 - **Market:** Anybody who currently qualifies for the vaccine are potential users. The potential user base is also expanding as eligibility expands nationwide.
 - **Habit:** An average user would use this app a few times until they are vaccinated.
@@ -38,25 +38,35 @@ VaccineFinder is an app to help users find available appointments to get a COVID
 
 ### 2. Screen Archetypes
 
-* Stream
+* Stream Screen
    * User can scroll through locations with available appointments
    * User can click a location to find more information about availability
 
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Settings Screen
+   * User can set zipcode to search appointments by location
+
+* Detail Screen
+   * User can see avaiable appointments in a specific location
+
+* Map View (Optional)
+   * User can see locations near them in a map
 
 ### 3. Navigation
+
+**Tab Navigation** (Tab to Screen)
+
+* Locations Stream
+* Locations Map (Optional)
 
 **Flow Navigation** (Screen to Screen)
 
 * Main Screen
    * Input zipcode and hit go button to go to second screen
-   
+
 * Second Screen
    * Scroll through a tableview of locations
    * Click on specific location which will go to third screen
- 
+
  * Third Screen
    * Detailed View of Specific location
 
@@ -64,15 +74,15 @@ VaccineFinder is an app to help users find available appointments to get a COVID
 ## Wireframes
 
 <img src="http://g.recordit.co/85cciCl1O0.gif" width=600>
-		 	 	 		
-			 		
+
+
 
 
 ### [BONUS] Digital Wireframes & Mockups
 
 ### [BONUS] Interactive Prototype
 
-## Schema 
+## Schema
 [This section will be completed in Unit 9]
 ### Models
 [Add table of models]
