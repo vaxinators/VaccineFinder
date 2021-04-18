@@ -1,4 +1,3 @@
-[Wireframes ios project.pdf](https://github.com/vaxinators/VaccineFinder/files/6326675/Wireframes.ios.project.pdf)
 # VaccineFinder
 
 ## Table of Contents
