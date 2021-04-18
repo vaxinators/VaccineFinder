@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  VaccineFinder
 //
-//  Created by Favian Flores on 4/11/21.
+//  Created by IOSGroup on 4/11/21.
 //
 
 import UIKit

@@ -1,9 +1,5 @@
 [Wireframes ios project.pdf](https://github.com/vaxinators/VaccineFinder/files/6326675/Wireframes.ios.project.pdf)
 # VaccineFinder
-Original App Design Project - README Template
-===
-
-# VaccineFinder
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -13,17 +9,18 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-VaccineFinder is an app to help users find available appointments to get a COVID-19 vaccine near them.
+VaccineFinder is an app to help users find available appointments to get a COVID-19 vaccine near
+them.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
-- **Category:** Health
-- **Mobile:** This app could be viable both on the web and on mobile. However, a mobile experience would provide users with additional features such as being able to set notifications to remind you of your appointment, or when a location has more appointments available.
-- **Story:** Allows users to conveniently find an appointment and remind them as needed. It could also remind them to check their local government website and ensure all the proper forms are filled out prior to their arrival.
-- **Market:** Anybody who currently qualifies for the vaccine are potential users. The potential user base is also expanding as eligibility expands nationwide.
-- **Habit:** An average user would use this app a few times until they are vaccinated.
-- **Scope:** This app could start by simply presenting all available appointments through the API and evolve with more features to make more of the vaccination process managed in the app.
+* **Category:** Health
+* **Mobile:** This app could be viable both on the web and on mobile. However, a mobile experience would provide users with additional features such as being able to set notifications to remind you of your appointment, or when a location has more appointments available.
+* **Story:** Allows users to conveniently find an appointment and remind them as needed. It could also remind them to check their local government website and ensure all the proper forms are filled out prior to their arrival.
+* **Market:** Anybody who currently qualifies for the vaccine are potential users. The potential user base is also expanding as eligibility expands nationwide.
+* **Habit:** An average user would use this app a few times until they are vaccinated.
+* **Scope:** This app could start by simply presenting all available appointments through the API and evolve with more features to make more of the vaccination process managed in the app.
 
+## Product Spec
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
@@ -70,27 +67,35 @@ VaccineFinder is an app to help users find available appointments to get a COVID
  * Third Screen
    * Detailed View of Specific location
 
-
 ## Wireframes
-
 <img src="http://g.recordit.co/85cciCl1O0.gif" width=600>
 
-
-
-
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
-
 ## Schema
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+#### Vaccine Info
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| modernaFS | URL | Moderna vaccine fact sheet link |
+| pfizerFS | URL | Pfizer vaccine fact sheet link |
+| jnjFS | URL | Johnson & Johnson vaccine fact sheet link |
+
+#### Local Government Website
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| lgwAL | URL | link to Alabama state government website on vaccine |
+| lgwAK | URL | link to Arkansas state government website on vaccine |
+...
+| lgwWY | URL | link to Wyoming state government website on vaccine |
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
-
-
----
-API: https://www.vaccinespotter.org/api/
+* list of network requests by screen
+   * Stream Screen
+      * (GET) Get the latest appointment availability data for each state
+   * Detail Screen
+      * (GET) Get the latest appointment availability data for each location
+* list of endpoints
+   * VaccineSpotter API
+      * Base URL: https://www.vaccinespotter.org/api
+      * | Request Type | Endpoint | Description |
+        | ------------ | -------- | ----------- |
+        | GET | /v0/states/'state'.json | Gets all available appointment information for 'state'|
