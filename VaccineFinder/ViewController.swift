@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
         super.viewIfLoaded
+		odfnjdkciod dv dvod 
 		// Do any additional setup after loading the view.
 	}
 
