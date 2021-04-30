@@ -1,5 +1,4 @@
 # VaccineFinder
-jebdiuewbd jedibwdij qbwiudqwdi
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
@@ -24,13 +23,17 @@ them.
 
 **Required Must-have Stories**
 
-* [ ] User can input location manually or get location automatically from IOS
+* [x] User can input location manually or get location automatically from IOS
 * [ ] User can scroll through locations with available appointments
 * [ ] User can click on location and get a detail screen with appointments
 
 **Optional Nice-to-have Stories**
 * [ ] A map to display the vaccination locations
 * [ ] User can set up notifications to remind them of their appointment
+
+Here's a walkthrough of implemented user stories:
+
+<img src='http://g.recordit.co/RbdvYpPMaV.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### 2. Screen Archetypes
 
