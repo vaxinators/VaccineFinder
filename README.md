@@ -28,6 +28,8 @@ them.
 * [ ] User can click on location and get a detail screen with appointments
 
 **Optional Nice-to-have Stories**
+* [x] An app icon
+* [x] A launch screen
 * [ ] A map to display the vaccination locations
 * [ ] User can set up notifications to remind them of their appointment
 
