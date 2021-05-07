@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Init View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="VaccineFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="InitViewController" customModule="VaccineFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                                     </attributedString>
                                 </state>
                                 <connections>
-                                    <segue destination="HoD-1i-lTw" kind="show" id="Jm6-z6-JX5"/>
+                                    <action selector="onGoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YsU-aA-Fkw"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lau-3Z-08g">
@@ -73,10 +73,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="zipCodeTF" destination="lau-3Z-08g" id="NRV-Ev-pn4"/>
+                        <segue destination="HoD-1i-lTw" kind="show" identifier="showLocations" id="nkV-h8-DfA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="797.10144927536237" y="0.0"/>
+            <point key="canvasLocation" x="796" y="0.0"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="npk-3J-Wle">
@@ -151,7 +155,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wO-F1-tjF">
-                                                    <rect key="frame" x="344" y="11" width="24" height="21"/>
+                                                    <rect key="frame" x="333" y="11" width="35" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -174,6 +178,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="distanceTo" destination="7wO-F1-tjF" id="CCg-F6-R2F"/>
                                             <outlet property="locationAddress" destination="6FK-vu-iJz" id="OLf-7V-Np3"/>
                                             <outlet property="locationName" destination="CYt-WK-XBy" id="Sr3-Os-elA"/>
                                         </connections>

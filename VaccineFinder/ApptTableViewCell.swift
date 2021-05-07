@@ -11,6 +11,7 @@ class ApptTableViewCell: UITableViewCell {
 
 	@IBOutlet weak var locationName: UILabel!
 	@IBOutlet weak var locationAddress: UILabel!
+	@IBOutlet weak var distanceTo: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
