@@ -24,7 +24,7 @@ them.
 **Required Must-have Stories**
 
 * [x] User can input location manually or get location automatically from IOS
-* [ ] User can scroll through locations with available appointments
+* [x] User can scroll through locations with available appointments
 * [ ] User can click on location and get a detail screen with appointments
 
 **Optional Nice-to-have Stories**
