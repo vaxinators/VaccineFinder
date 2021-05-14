@@ -23,7 +23,7 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		// TODO: Insert loading screen for tableview
 		if sortedData.count == 0 {
-			return 7
+			return 10
 		}
 
 		return sortedData.count
@@ -42,8 +42,14 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 		let location = sortedData[indexPath.row]
 		let properties = location["properties"] as! [String: Any]
+		var provider = properties["provider"] as? String
+		provider = provider?.replacingOccurrences(of: "_", with: " ")
+		provider = provider?.capitalized
+		if provider == "Cvs" {
+			provider = "CVS"
+		}
 		let distanceTo = location["distanceTo"] as! Double
-		cell.locationName.text = properties["provider"] as? String
+		cell.locationName.text = provider
 		cell.locationAddress.text = properties["address"] as? String
 		cell.distanceTo.text = String(distanceTo)
 
@@ -66,7 +72,6 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 	func loadApiData() {
 		let state = locationMarker!.administrativeArea!
-		print(state)
 		let url = URL(string: "https://www.vaccinespotter.org/api/v0/states/" + state + ".json")!
 		let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
 		let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
@@ -135,6 +140,17 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 		tableView.reloadData()
 	}
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		let cell = sender as! UITableViewCell
+		let indexPath = tableView.indexPath(for: cell)!
+		var properties = sortedData[indexPath.row]
+		properties = properties["properties"] as! [String: Any]
+		let ApptDetailsViewController = segue.destination as! ApptDetailsViewController
+		ApptDetailsViewController.properties = properties
+		tableView.deselectRow(at: indexPath, animated: true)
+	}
+
 }
 
 

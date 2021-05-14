@@ -15,7 +15,7 @@ class InitViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		UserDefaults.standard.setValue("00000", forKey: "userLocation")
-		UserDefaults.standard.setValue(true, forKey: "showOnlyIfAvailable")
+		UserDefaults.standard.setValue(false, forKey: "showOnlyIfAvailable")
 		UserDefaults.standard.setValue(10, forKey: "maxDistance")
 	}
 
