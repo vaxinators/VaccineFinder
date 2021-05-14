@@ -25,7 +25,7 @@ them.
 
 * [x] User can input location manually or get location automatically from IOS
 * [x] User can scroll through locations with available appointments
-* [ ] User can click on location and get a detail screen with appointments
+* [x] User can click on location and get a detail screen with appointments
 
 **Optional Nice-to-have Stories**
 * [x] An app icon
@@ -34,6 +34,8 @@ them.
 * [ ] User can set up notifications to remind them of their appointment
 
 Here's a walkthrough of implemented user stories:
+
+<img src='http://g.recordit.co/JxFEW44AIU.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <img src='http://g.recordit.co/70bVxpse0W.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
