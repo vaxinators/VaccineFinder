@@ -11,6 +11,7 @@ import CoreLocation
 class InitViewController: UIViewController {
 
 	@IBOutlet weak var zipCodeTF: UITextField!
+    @IBOutlet weak var tryAgain: UILabel!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -33,7 +34,8 @@ class InitViewController: UIViewController {
 				}
 			}
 			// TODO: Add visual cue for incorrect zipcode
-			print("incorrect zipcode")
+            self.tryAgain.textColor = .red
 		}
 	}
 }
+
