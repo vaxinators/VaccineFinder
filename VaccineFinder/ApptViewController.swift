@@ -48,7 +48,7 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 		if provider == "Cvs" {
 			provider = "CVS"
 		}
-		let distanceTo = location["distanceTo"] as! Double
+		let distanceTo = properties["distanceTo"] as! Double
 		cell.locationName.text = provider
 		cell.locationAddress.text = properties["address"] as? String
 		cell.distanceTo.text = String(distanceTo)
@@ -95,7 +95,7 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 		for i in 0...(rawData.count-1) {
 			let geometry = rawData[i]["geometry"] as! [String: Any]
-			let properties = rawData[i]["properties"] as! [String: Any]
+			var properties = rawData[i]["properties"] as! [String: Any]
 			let locationCoordinates = geometry["coordinates"] as! [Double]
 			let userCoordinates = locationMarker!.location!
 			let showOnlyIfAvailable = UserDefaults.standard.bool(forKey: "showOnlyIfAvailable")
@@ -110,7 +110,8 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 			distanceTo = (distanceTo * 0.00621371192)
 			distanceTo.round()
 			distanceTo = distanceTo/10
-			rawData[i].updateValue(distanceTo, forKey: "distanceTo")
+			properties.updateValue(distanceTo, forKey: "distanceTo")
+			rawData[i].updateValue(properties, forKey: "properties")
 
 			if showOnlyIfAvailable {
 				if let available = available {
@@ -124,14 +125,17 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 		}
 
 		tempData.sort { (item1, item2) -> Bool in
-			let distance1 = item1["distanceTo"] as! Double
-			let distance2 = item2["distanceTo"] as! Double
+			let properties1 = item1["properties"] as! [String: Any]
+			let properties2 = item2["properties"] as! [String: Any]
+			let distance1 = properties1["distanceTo"] as! Double
+			let distance2 = properties2["distanceTo"] as! Double
 			return distance1 < distance2
 		}
 
 		for i in 0...(tempData.count-1) {
 			let maxDistance = UserDefaults.standard.double(forKey: "maxDistance")
-			let distanceTo = tempData[i]["distanceTo"] as! Double
+			let properties = tempData[i]["properties"] as! [String: Any]
+			let distanceTo = properties["distanceTo"] as! Double
 			if maxDistance < distanceTo {
 				break
 			}

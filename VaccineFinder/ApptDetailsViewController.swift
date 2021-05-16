@@ -13,13 +13,16 @@ class ApptDetailsViewController: UIViewController {
 	@IBOutlet weak var firstDoseAvailability: UILabel!
 	@IBOutlet weak var secondDoseAvailability: UILabel!
 	@IBOutlet weak var website: UITextView!
+	@IBOutlet weak var distanceTo: UILabel!
 
 	var properties: [String: Any]!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		print(properties!)
 		addressLabel.text = properties["address"] as? String ?? "address not found"
+		let distance = properties["distanceTo"] as! Double
+		distanceTo.text = String(distance)
+		
 		var provider = properties["provider"] as? String ?? "provider not found"
 		if provider != "provider not found" {
 			provider = provider.replacingOccurrences(of: "_", with: " ")

@@ -15,6 +15,7 @@
 		B001143E262355DD004885D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B001143C262355DD004885D7 /* LaunchScreen.storyboard */; };
 		B07FD63D2644BC8C004CC05E /* InitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07FD63C2644BC8C004CC05E /* InitViewController.swift */; };
 		B09AD7C1264ED71D0058C74E /* ApptDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09AD7C0264ED71D0058C74E /* ApptDetailsViewController.swift */; };
+		B09F1EF426517D850094E190 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09F1EF326517D850094E190 /* SettingsViewController.swift */; };
 		B0C3344B263C9076006092E0 /* ApptTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C3344A263C9076006092E0 /* ApptTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		B001143F262355DD004885D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B07FD63C2644BC8C004CC05E /* InitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitViewController.swift; sourceTree = "<group>"; };
 		B09AD7C0264ED71D0058C74E /* ApptDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptDetailsViewController.swift; sourceTree = "<group>"; };
+		B09F1EF326517D850094E190 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B0C3344A263C9076006092E0 /* ApptTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApptTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 				B0011435262355DA004885D7 /* ApptViewController.swift */,
 				B0C3344A263C9076006092E0 /* ApptTableViewCell.swift */,
 				B09AD7C0264ED71D0058C74E /* ApptDetailsViewController.swift */,
+				B09F1EF326517D850094E190 /* SettingsViewController.swift */,
 				B0011437262355DB004885D7 /* Main.storyboard */,
 				B001143A262355DD004885D7 /* Assets.xcassets */,
 				B001143C262355DD004885D7 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 			files = (
 				B09AD7C1264ED71D0058C74E /* ApptDetailsViewController.swift in Sources */,
 				B0011436262355DA004885D7 /* ApptViewController.swift in Sources */,
+				B09F1EF426517D850094E190 /* SettingsViewController.swift in Sources */,
 				B0011432262355DA004885D7 /* AppDelegate.swift in Sources */,
 				B07FD63D2644BC8C004CC05E /* InitViewController.swift in Sources */,
 				B0C3344B263C9076006092E0 /* ApptTableViewCell.swift in Sources */,

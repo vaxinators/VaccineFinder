@@ -89,10 +89,10 @@
             </objects>
             <point key="canvasLocation" x="795.6521739130435" y="0.0"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="npk-3J-Wle">
             <objects>
-                <viewController id="YEU-OU-dPB" sceneMemberID="viewController">
+                <viewController id="YEU-OU-dPB" customClass="SettingsViewController" customModule="VaccineFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fpB-hj-uXT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,6 +130,10 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="2k8-dZ-3uM"/>
+                    <connections>
+                        <outlet property="apptSwitch" destination="cml-jj-VF8" id="9Ec-Vi-9tY"/>
+                        <outlet property="distanceSelector" destination="iaj-Yr-a3D" id="2rv-uU-cnT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2b0-Gd-9Gl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -325,6 +329,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="bxX-8j-er6" id="Shc-cM-11C"/>
                         <outlet property="apptAvailability" destination="Q9C-Sr-YE7" id="w5c-mo-LZ9"/>
+                        <outlet property="distanceTo" destination="hch-ye-zhL" id="ESi-Vb-MCj"/>
                         <outlet property="firstDoseAvailability" destination="2GN-fo-8YR" id="s3g-1J-jOb"/>
                         <outlet property="providerName" destination="QJw-YM-tgp" id="C2D-6W-Tps"/>
                         <outlet property="secondDoseAvailability" destination="YwH-HC-f1F" id="ibx-kN-Vax"/>
