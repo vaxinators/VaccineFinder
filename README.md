@@ -28,10 +28,8 @@ them.
 * [x] User can click on location and get a detail screen with appointments
 
 **Optional Nice-to-have Stories**
-* [x] An app icon
-* [x] A launch screen
-* [x] Show only available appointments option
-* [x] Set up maximum distance option
+* [x] Show only available appointments option in settings screen
+* [x] Set up maximum distance option in settings screen
 
 
 Here's a walkthrough of implemented user stories:
