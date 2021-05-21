@@ -30,10 +30,13 @@ them.
 **Optional Nice-to-have Stories**
 * [x] An app icon
 * [x] A launch screen
-* [ ] A map to display the vaccination locations
-* [ ] User can set up notifications to remind them of their appointment
+* [x] Show only available appointments option
+* [x] Set up maximum distance option
+
 
 Here's a walkthrough of implemented user stories:
+
+<img src='http://g.recordit.co/fJ96TP3J68.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <img src='http://g.recordit.co/JxFEW44AIU.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
