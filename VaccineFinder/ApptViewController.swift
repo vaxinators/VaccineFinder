@@ -8,6 +8,15 @@ import CoreLocation
 
 class ApptViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    let myRefreshControl = UIRefreshControl()
+    @objc func refreshReload(){
+        rawData.removeAll()
+        sortedData.removeAll()
+        tableView.reloadData()
+        getPlacemark()
+        myRefreshControl.endRefreshing()
+    }
+    
 	@IBOutlet weak var tableView: UITableView!
 	var	rawData: [[String: Any]] = []
 	var sortedData: [[String: Any]] = []
@@ -18,6 +27,9 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 		tableView.dataSource = self
 		tableView.delegate = self
 		getPlacemark()
+        
+        myRefreshControl.addTarget(self, action: #selector(refreshReload), for: .valueChanged)
+        tableView.refreshControl = myRefreshControl
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
