@@ -62,7 +62,11 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 		}
 		let distanceTo = properties["distanceTo"] as! Double
 		cell.locationName.text = provider
-		cell.locationAddress.text = properties["address"] as? String
+		// address formatting
+		var address = properties["address"] as? String
+		address = address?.capitalized
+		cell.locationAddress.text = address
+		// End
 		cell.distanceTo.text = String(distanceTo)
 
 		return cell
