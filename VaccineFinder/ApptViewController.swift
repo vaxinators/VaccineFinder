@@ -63,7 +63,7 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 		let distanceTo = properties["distanceTo"] as! Double
 		cell.locationName.text = provider
 		cell.locationAddress.text = properties["address"] as? String
-		cell.distanceTo.text = String(distanceTo)
+		cell.distanceTo.text = "\(String(distanceTo)) miles"
 
 		return cell
 	}
