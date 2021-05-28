@@ -33,6 +33,7 @@ them.
 
 
 Here's a walkthrough of implemented user stories:
+<img src='http://g.recordit.co/er0QkBZotB.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <img src='http://g.recordit.co/fJ96TP3J68.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
