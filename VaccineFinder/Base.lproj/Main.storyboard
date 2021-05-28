@@ -355,7 +355,6 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="YwH-HC-f1F" firstAttribute="top" secondItem="2GN-fo-8YR" secondAttribute="bottom" constant="35" id="8vY-7y-JHu"/>
-                            <constraint firstItem="dfY-V8-C9L" firstAttribute="bottom" secondItem="Nc0-TC-rFU" secondAttribute="bottom" constant="205" id="9rS-QM-1yb"/>
                             <constraint firstItem="bxX-8j-er6" firstAttribute="top" secondItem="QJw-YM-tgp" secondAttribute="bottom" constant="7.5" id="ASz-AN-I5s"/>
                             <constraint firstItem="niU-hG-ata" firstAttribute="top" relation="lessThanOrEqual" secondItem="bxX-8j-er6" secondAttribute="bottom" constant="7.5" id="Bcc-yT-Qd1"/>
                             <constraint firstItem="bxX-8j-er6" firstAttribute="leading" secondItem="dfY-V8-C9L" secondAttribute="leading" constant="20" id="DRf-ef-Ljd"/>
