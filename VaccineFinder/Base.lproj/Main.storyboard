@@ -333,6 +333,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nc0-TC-rFU">
                                 <rect key="frame" x="32" y="637" width="350" height="20"/>
                                 <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Ufn-gi-tXu"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0W5-J7-Xaz">
                                 <rect key="frame" x="32" y="411" width="350" height="19"/>
