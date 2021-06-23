@@ -48,7 +48,7 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 		if sortedData.count == 0 {
 			cell.locationName.text = "Loading..."
 			cell.locationAddress.text = "Loading..."
-			cell.distanceTo.text = "Loading..."
+			cell.distanceTo.text = "0.0"
 			return cell
 		}
 
