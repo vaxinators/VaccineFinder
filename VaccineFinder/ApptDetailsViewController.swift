@@ -21,7 +21,7 @@ class ApptDetailsViewController: UIViewController {
 		super.viewDidLoad()
 		addressLabel.text = properties["address"] as? String ?? "address not found"
 		let distance = properties["distanceTo"] as! Double
-		distanceTo.text = String(distance)
+		distanceTo.text = "\(String(distance)) miles"
 		
 		var provider = properties["provider"] as? String ?? "provider not found"
 		if provider != "provider not found" {
