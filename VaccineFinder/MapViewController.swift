@@ -1,76 +1,36 @@
-//  ApptViewController.swift
+//
+//  MapViewController.swift
 //  VaccineFinder
 //
-//  Created by IOSGroup on 4/11/21.
+//  Created by Favian Flores on 6/23/21.
+//
 
 import UIKit
+import MapKit
 import CoreLocation
 
-class ApptViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MapViewController: UIViewController {
 
-    let myRefreshControl = UIRefreshControl()
-    @objc func refreshReload(){
-        rawData.removeAll()
-        sortedData.removeAll()
-        tableView.reloadData()
-        getPlacemark()
-        myRefreshControl.endRefreshing()
-    }
-    
-	@IBOutlet weak var tableView: UITableView!
 	var	rawData: [[String: Any]] = []
 	var sortedData: [[String: Any]] = []
 	var locationMarker: CLPlacemark?
+	@IBOutlet weak var mapView: MKMapView!
+	let locationManager = CLLocationManager()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		tableView.dataSource = self
-		tableView.delegate = self
+		locationManager.requestWhenInUseAuthorization()
+		locationManager.desiredAccuracy = kCLLocationAccuracyBest
+		locationManager.startUpdatingLocation()
+		mapView.showsUserLocation = true
 		getPlacemark()
-        
-        myRefreshControl.addTarget(self, action: #selector(refreshReload), for: .valueChanged)
-        tableView.refreshControl = myRefreshControl
 	}
-
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if sortedData.count == 0 {
-			return 10
-		}
-		return sortedData.count
-	}
-
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "ApptCell") as! ApptTableViewCell
-
-		if sortedData.count == 0 {
-			cell.locationName.text = "Loading..."
-			cell.locationAddress.text = "Loading..."
-			cell.distanceTo.text = "0.0 miles"
-			return cell
-		}
-
-		let location = sortedData[indexPath.row]
-		let properties = location["properties"] as! [String: Any]
-		var provider = properties["provider"] as? String
-		provider = provider?.replacingOccurrences(of: "_", with: " ")
-		provider = provider?.capitalized
-		if provider == "Cvs" {
-			provider = "CVS"
-		}
-		let distanceTo = properties["distanceTo"] as! Double
-		cell.locationName.text = provider
-		var address = (properties["address"] as? String) ?? ""
-		address = address.uppercased()
-		cell.locationAddress.text = address
-		cell.distanceTo.text = "\(String(distanceTo)) miles"
-
-		return cell
-	}
+    
 
 	func getPlacemark() {
-		let userLocation = UserDefaults.standard.string(forKey: "userLocation")!
+		let userLocation = locationManager.location!
 		let geocoder = CLGeocoder()
-		geocoder.geocodeAddressString(userLocation) { (placemarks, error) in
+		geocoder.reverseGeocodeLocation (userLocation) { (placemarks, error) in
 			if error == nil {
 				if let placemark = placemarks?[0] {
 					self.locationMarker = placemark
@@ -118,6 +78,14 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 					longitude: CLLocationDegrees(locationCoordinates[0])
 				)
 			)
+			let newAnnotation = MKPointAnnotation()
+			newAnnotation.title = properties["provider"] as? String
+			newAnnotation.coordinate = CLLocationCoordinate2D(
+				latitude: CLLocationDegrees(locationCoordinates[1]),
+				longitude: CLLocationDegrees(locationCoordinates[0])
+			)
+			mapView.addAnnotation(newAnnotation)
+
 			distanceTo = (distanceTo * 0.00621371192)
 			distanceTo.round()
 			distanceTo = distanceTo/10
@@ -153,19 +121,16 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 			sortedData.append(tempData[i])
 		}
 
-		tableView.reloadData()
+		// add points to map
 	}
 
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		let cell = sender as! UITableViewCell
-		let indexPath = tableView.indexPath(for: cell)!
-		var properties = sortedData[indexPath.row]
-		properties = properties["properties"] as! [String: Any]
-		let ApptDetailsViewController = segue.destination as! ApptDetailsViewController
-		ApptDetailsViewController.properties = properties
-		tableView.deselectRow(at: indexPath, animated: true)
-	}
-
+//	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//		let cell = sender as! UITableViewCell
+//		let indexPath = tableView.indexPath(for: cell)!
+//		var properties = sortedData[indexPath.row]
+//		properties = properties["properties"] as! [String: Any]
+//		let ApptDetailsViewController = segue.destination as! ApptDetailsViewController
+//		ApptDetailsViewController.properties = properties
+//		tableView.deselectRow(at: indexPath, animated: true)
+//	}
 }
-
-

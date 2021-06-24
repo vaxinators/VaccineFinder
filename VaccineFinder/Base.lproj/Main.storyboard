@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Pa-aV-tJI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Pa-aV-tJI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -88,6 +88,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QVU-Xy-CJY">
+                        <barButtonItem key="leftBarButtonItem" title="Map View" id="XYw-Tv-0De">
+                            <connections>
+                                <segue destination="DmE-2O-mYw" kind="show" id="Frb-wv-KVM"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="2yO-D8-6HV">
                             <connections>
                                 <segue destination="YEU-OU-dPB" kind="show" id="wMk-5H-d9U"/>
@@ -97,7 +102,7 @@
                     <connections>
                         <outlet property="tryAgain" destination="MeN-hW-gmY" id="tLj-mQ-UVJ"/>
                         <outlet property="zipCodeTF" destination="lau-3Z-08g" id="NRV-Ev-pn4"/>
-                        <segue destination="HoD-1i-lTw" kind="show" identifier="showLocations" id="nkV-h8-DfA"/>
+                        <segue destination="HoD-1i-lTw" kind="show" identifier="showLocationsTable" id="nkV-h8-DfA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -172,9 +177,9 @@
         <!--Appt View Controller-->
         <scene sceneID="sE3-Ke-uhy">
             <objects>
-                <viewController id="HoD-1i-lTw" customClass="ApptViewController" customModule="VaccineFinder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="HoD-1i-lTw" customClass="ApptViewController" customModule="VaccineFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zXs-fM-w4v">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="scL-Oq-qIm">
@@ -184,7 +189,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ApptCell" rowHeight="100" id="3Lu-HR-csZ" customClass="ApptTableViewCell" customModule="VaccineFinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="436" height="100"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="436" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Lu-HR-csZ" id="UWz-5A-MgD">
                                             <rect key="frame" x="0.0" y="0.0" width="436" height="100"/>
@@ -204,13 +209,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RiteAid" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYt-WK-XBy" userLabel="LocationName">
-                                                    <rect key="frame" x="20" y="5" width="285" height="31"/>
+                                                    <rect key="frame" x="20" y="5" width="330" height="31"/>
                                                     <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="30"/>
                                                     <color key="textColor" red="0.52000909360000003" green="0.82461020090000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="2.0 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wO-F1-tjF">
-                                                    <rect key="frame" x="313" y="10" width="68" height="21"/>
+                                                    <rect key="frame" x="358" y="10" width="68" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -221,7 +226,7 @@
                                                 <constraint firstItem="7wO-F1-tjF" firstAttribute="top" secondItem="UWz-5A-MgD" secondAttribute="top" constant="10" id="36W-rj-2rT"/>
                                                 <constraint firstItem="6FK-vu-iJz" firstAttribute="leading" secondItem="UWz-5A-MgD" secondAttribute="leading" constant="20" symbolic="YES" id="9x7-nP-3Bc"/>
                                                 <constraint firstItem="6FK-vu-iJz" firstAttribute="top" secondItem="CYt-WK-XBy" secondAttribute="bottom" constant="3" id="BDJ-uf-I9k"/>
-                                                <constraint firstAttribute="trailing" secondItem="7wO-F1-tjF" secondAttribute="trailing" constant="55" id="DMZ-SQ-1kz"/>
+                                                <constraint firstAttribute="trailing" secondItem="7wO-F1-tjF" secondAttribute="trailing" constant="10" id="DMZ-SQ-1kz"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6FK-vu-iJz" secondAttribute="trailing" constant="20" symbolic="YES" id="MiZ-z2-2X5"/>
                                                 <constraint firstItem="CYt-WK-XBy" firstAttribute="leading" secondItem="UWz-5A-MgD" secondAttribute="leading" constant="20" symbolic="YES" id="Vyn-SI-tss"/>
                                                 <constraint firstItem="6FK-vu-iJz" firstAttribute="top" secondItem="7wO-F1-tjF" secondAttribute="bottom" constant="8" symbolic="YES" id="YLh-Px-t7h"/>
@@ -247,24 +252,58 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="RH6-kI-b9q"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="scL-Oq-qIm" id="0Ob-o2-ffW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjd-Sn-DwU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1557.9710144927537" y="0.0"/>
+            <point key="canvasLocation" x="1712" y="441"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="2ga-re-tTu">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="DmE-2O-mYw" customClass="MapViewController" customModule="VaccineFinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W4K-MB-KFL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bAY-k0-CxW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <outlet property="delegate" destination="DmE-2O-mYw" id="tAO-F0-OfI"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MTU-DR-QUD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="bAY-k0-CxW" secondAttribute="bottom" id="5VX-RB-L2O"/>
+                            <constraint firstItem="bAY-k0-CxW" firstAttribute="top" secondItem="W4K-MB-KFL" secondAttribute="top" id="Ha3-1J-qYE"/>
+                            <constraint firstItem="bAY-k0-CxW" firstAttribute="leading" secondItem="W4K-MB-KFL" secondAttribute="leading" id="VlQ-dC-eJk"/>
+                            <constraint firstAttribute="trailing" secondItem="bAY-k0-CxW" secondAttribute="trailing" id="v1V-s5-Ibp"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DCR-MZ-Yf1"/>
+                    <connections>
+                        <outlet property="mapView" destination="bAY-k0-CxW" id="nFT-Ak-xl5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zra-ne-Yvz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712" y="-323"/>
         </scene>
         <!--Appt Details View Controller-->
         <scene sceneID="nS3-bP-WgD">
             <objects>
                 <viewController id="ygX-PO-MSc" customClass="ApptDetailsViewController" customModule="VaccineFinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KdQ-CH-GIN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJw-YM-tgp">
-                                <rect key="frame" x="20" y="145" width="374" height="71.5"/>
+                                <rect key="frame" x="20" y="57" width="374" height="71.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="RiteAid">
                                         <attributes>
@@ -278,7 +317,7 @@
                                 <size key="shadowOffset" width="7" height="0.0"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1010 Ocean Ave" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxX-8j-er6">
-                                <rect key="frame" x="20" y="224" width="374" height="31.5"/>
+                                <rect key="frame" x="20" y="136" width="374" height="31.5"/>
                                 <fontDescription key="fontDescription" name="Futura-CondensedMedium" family="Futura" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -315,7 +354,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="www.riteaid.com" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="niU-hG-ata" userLabel="website">
-                                <rect key="frame" x="20" y="263" width="374" height="140"/>
+                                <rect key="frame" x="20" y="175" width="374" height="228"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" link="YES"/>
                                 </accessibility>
@@ -325,7 +364,7 @@
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.0 miles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hch-ye-zhL">
-                                <rect key="frame" x="322" y="116" width="68" height="21"/>
+                                <rect key="frame" x="322" y="28" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -404,7 +443,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sP9-3V-U58" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2321.739130434783" y="0.0"/>
+            <point key="canvasLocation" x="2623" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tCe-pu-SAC">
@@ -422,11 +461,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hq-Qi-Mse" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-113.04347826086958" y="0.0"/>
+            <point key="canvasLocation" x="19" y="0.0"/>
         </scene>
     </scenes>
     <resources>
         <image name="Govaxicon" width="500" height="500"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

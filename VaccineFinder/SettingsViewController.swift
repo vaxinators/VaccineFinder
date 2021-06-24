@@ -10,6 +10,7 @@ import UIKit
 class SettingsViewController: UIViewController {
 
 	@IBOutlet weak var apptSwitch: UISwitch!
+	@IBOutlet weak var mapSwitch: UISwitch!
 	@IBOutlet weak var distanceSelector: UISegmentedControl!
 
     override func viewDidLoad() {
