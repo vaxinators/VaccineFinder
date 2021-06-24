@@ -28,9 +28,12 @@ class MapViewController: UIViewController {
     
 
 	func getPlacemark() {
-		let userLocation = locationManager.location!
+		var userLocation = locationManager.location
+		while userLocation == nil {
+			userLocation = locationManager.location
+		}
 		let geocoder = CLGeocoder()
-		geocoder.reverseGeocodeLocation (userLocation) { (placemarks, error) in
+		geocoder.reverseGeocodeLocation (userLocation!) { (placemarks, error) in
 			if error == nil {
 				if let placemark = placemarks?[0] {
 					self.locationMarker = placemark
@@ -78,13 +81,6 @@ class MapViewController: UIViewController {
 					longitude: CLLocationDegrees(locationCoordinates[0])
 				)
 			)
-			let newAnnotation = MKPointAnnotation()
-			newAnnotation.title = properties["provider"] as? String
-			newAnnotation.coordinate = CLLocationCoordinate2D(
-				latitude: CLLocationDegrees(locationCoordinates[1]),
-				longitude: CLLocationDegrees(locationCoordinates[0])
-			)
-			mapView.addAnnotation(newAnnotation)
 
 			distanceTo = (distanceTo * 0.00621371192)
 			distanceTo.round()
@@ -114,11 +110,21 @@ class MapViewController: UIViewController {
 		for i in 0...(tempData.count-1) {
 			let maxDistance = UserDefaults.standard.double(forKey: "maxDistance")
 			let properties = tempData[i]["properties"] as! [String: Any]
+			let geometry = tempData[i]["geometry"] as! [String: Any]
+			let locationCoordinates = geometry["coordinates"] as! [Double]
 			let distanceTo = properties["distanceTo"] as! Double
 			if maxDistance < distanceTo {
 				break
 			}
 			sortedData.append(tempData[i])
+
+			let newAnnotation = MKPointAnnotation()
+			newAnnotation.title = properties["provider"] as? String
+			newAnnotation.coordinate = CLLocationCoordinate2D(
+				latitude: CLLocationDegrees(locationCoordinates[1]),
+				longitude: CLLocationDegrees(locationCoordinates[0])
+			)
+			mapView.addAnnotation(newAnnotation)
 		}
 
 		// add points to map

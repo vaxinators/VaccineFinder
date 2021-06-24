@@ -28,8 +28,8 @@ class ApptViewController: UIViewController, UITableViewDelegate, UITableViewData
 		tableView.delegate = self
 		getPlacemark()
         
-        myRefreshControl.addTarget(self, action: #selector(refreshReload), for: .valueChanged)
-        tableView.refreshControl = myRefreshControl
+		myRefreshControl.addTarget(self, action: #selector(refreshReload), for: .valueChanged)
+		tableView.refreshControl = myRefreshControl
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
